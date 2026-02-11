@@ -1,0 +1,78 @@
+<!-- ================= index.html ================= -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualidade Agora</title>
+  <script>
+    function atualizarData() {
+      const hoje = new Date();
+      const opcoes = { day: '2-digit', month: 'long', year: 'numeric' };
+      document.getElementById("dataAtual").innerText = hoje.toLocaleDateString('pt-BR', opcoes);
+    }
+    function pesquisar() {
+      const termo = document.getElementById("busca").value.toLowerCase();
+      alert("Você pesquisou por: " + termo);
+    }
+  </script>
+  <style>
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#f4f6f8; }
+    header { background:#c4170c; color:white; padding:15px 20px; }
+    .topo { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+    .logo { font-size:28px; font-weight:bold; }
+    nav a { color:white; text-decoration:none; margin-right:15px; font-size:14px; }
+    nav a:hover { text-decoration:underline; }
+    .busca { margin-top:10px; }
+    .busca input { padding:6px; border-radius:4px; border:none; }
+    .busca button { padding:6px 10px; border:none; background:#111; color:white; border-radius:4px; cursor:pointer; }
+    main { max-width:1100px; margin:20px auto; padding:0 15px; }
+    .card { background:white; padding:20px; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.08); margin-bottom:25px; }
+    .card img { width:100%; border-radius:8px; }
+    .meta { color:#666; font-size:14px; margin:8px 0; }
+    footer { background:#111; color:#ccc; text-align:center; padding:20px; margin-top:40px; }
+  </style>
+</head>
+<body onload="atualizarData()">
+
+<header>
+  <div class="topo">
+    <div class="logo">Atualidade Agora</div>
+    <nav>
+      <a href="#">Brasil</a>
+      <a href="#">Mundo</a>
+      <a href="#">Economia</a>
+      <a href="#">Tecnologia</a>
+      <a href="#">Educação</a>
+    </nav>
+  </div>
+  <div class="busca">
+    <input type="text" id="busca" placeholder="Buscar notícias...">
+    <button onclick="pesquisar()">Buscar</button>
+  </div>
+</header>
+
+<main>
+  <!-- NOTÍCIA 1 (NÃO ALTERADA) -->
+  <div class="card">
+    <h1><a href="materia.html" style="text-decoration:none; color:#c4170c;">Governo anuncia medida inédita para uso noturno de celulares</a></h1>
+    <div class="meta">Publicado em <span id="dataAtual"></span></div>
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="Pessoa usando celular">
+    <p>Proposta que visa reduzir impactos do uso excessivo de telas à noite gera debate nacional e movimenta redes sociais.</p>
+  </div>
+
+  <!-- NOTÍCIA 2 (NOVA) -->
+  <div class="card">
+    <h1><a href="inflacao.html" style="text-decoration:none; color:#c4170c;">URGENTE: A subida da inflação pode quebrar a economia brasileira</a></h1>
+    <div class="meta">Publicado em 09 de fevereiro de 2026</div>
+    <img src="https://images.unsplash.com/photo-1580519542036-c47de6196ba5" alt="Inflação e economia">
+    <p>Inflação atinge 15%, poder de compra cai e crise econômica se intensifica no país.</p>
+  </div>
+</main>
+
+<footer>
+  © 2026 Atualidade Agora — Portal de Notícias
+</footer>
+
+</body>
+</html>
